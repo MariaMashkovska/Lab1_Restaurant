@@ -6,52 +6,48 @@ import lombok.*;
 @AllArgsConstructor
 @Setter
 @Getter
-
+@ToString
 public class Restaurant {
+    private static Restaurant instance;
     private String name;
     private int rating;
     private int maxCapacity;
     private int currentCapacity;
 
-    private static Restaurant instance;
-
-    public static Restaurant getInstance(){
-        if (instance == null){
+    public static Restaurant getInstance() {
+        if (instance == null) {
             instance = new Restaurant();
         }
         return instance;
     }
+
     public boolean acceptReservation(int numOfGuests) {
         if (currentCapacity + numOfGuests <= maxCapacity) {
             currentCapacity += numOfGuests;
             return true;
         }
-        else {
-            return false;
-        }
+
+        return false;
     }
 
-        public void removeReservation ( int numOfGuests){
-            currentCapacity = Math.max(currentCapacity - numOfGuests, 0);
-        }
-
-    @Override
-    public String toString() {
-        return "Name: " + name + '\'' +
-                "Rating: " + rating + '\'' +
-                "Max capacity: " + maxCapacity + '\'' +
-                "Current capacity " + currentCapacity + '\'';
+    public void removeReservation(int numOfGuests) {
+        currentCapacity = Math.max(currentCapacity - numOfGuests, 0);
     }
-        public static void main (String[]args){
-            Restaurant [] restaurants = new Restaurant[4];
-            restaurants[0]= new Restaurant("Kafe-bar Oksana ", 10, 23, 20);
-            restaurants[1]=new Restaurant();
-            restaurants[2]= getInstance();
-            restaurants[3]= getInstance();
 
-            for (int i = 0; i < restaurants.length; i++) {
-                System.out.println( restaurants[i].toString());
-            }
+    public static void main(String[] args) {
+        Restaurant[] restaurants = new Restaurant[4];
+        restaurants[0] = new Restaurant("Kafe-bar Oksana ", 10, 23, 20);
+        restaurants[1] = new Restaurant();
+        restaurants[2] = getInstance();
+        restaurants[3] = getInstance();
+
+//        for (int i = 0; i < restaurants.length; i++) {
+//            System.out.println(restaurants[i].toString());
+//        }
+
+        for (Restaurant restaurant : restaurants) {
+            System.out.println(restaurant.toString());
+        }
 
     }
 
