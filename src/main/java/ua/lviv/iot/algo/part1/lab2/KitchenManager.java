@@ -7,7 +7,9 @@ import java.util.List;
 import java.util.stream.Collectors;
 
 @ToString(callSuper = true)
+
 public class KitchenManager {
+
     private List<AbstractKitchen> kitchens = new LinkedList<>();
 
     public void addKitchen(final AbstractKitchen kitchen){
@@ -26,15 +28,19 @@ public class KitchenManager {
                 collect(Collectors.toList());
     }
 
-
     public static void main(String[] args) {
+
         KitchenManager manager = new KitchenManager();
+
         manager.addKitchen(new Restaurant("5-star Restaurant Lola", 200, 60, 2007, 10, 150, 34));
-        manager.addKitchen(new Restaurant("Restaurant Chebureki v Oleny", 20, 30, 2017, 8, 18, 7));
+        manager.addKitchen(new Restaurant("Restaurant Chebureky v Oleny", 20, 30, 2017, 8, 18, 7));
+
         manager.addKitchen(new HomeKitchen("GuestsHome", 3, 17, "Gas", "Wink"));
         manager.addKitchen(new HomeKitchen("Home", 5, 24, "Electrical", "Wink"));
+
         manager.addKitchen(new Pub("Kafe-bar Victoria", 90, 45, 1964, "Alcohol", 74));
         manager.addKitchen(new Pub("Kafe-bar Oksana", 100, 40, 1867, "Alcohol", 60));
+
         manager.addKitchen(new Pizzeria("Fredbear`s Family Diner", 42, 58, 1973, "Fuzzy drinks", 35, 2));
         manager.addKitchen(new Pizzeria("Freddy Fazbear`s Pizzeria", 70, 100, 1989, "Fuzzy drinks", 50, 4));
 
