@@ -11,7 +11,9 @@ import java.util.Random;
 @Setter
 @Getter
 @NoArgsConstructor
+
 public class Pub extends AbstractKitchen{
+
     private int yearOfFoundation;
     private String typeOfDrinks;
     private int maxCapacityOfGuests;
@@ -25,15 +27,19 @@ public class Pub extends AbstractKitchen{
 
     @Override
     public void addGuests(int guests) {
-        setCapacity(+guests);
-    }
+        setCapacity(capacity + guests);
+    } 
 
     @Override
     public KitchenTypes kitchenType() {
         KitchenTypes[] types = KitchenTypes.values();
+
         Random random = new Random();
         KitchenTypes randomType = types[random.nextInt(types.length)];
+
         System.out.println("Type of kitchen: " + randomType);
+
         return randomType;
     }
+
 }
