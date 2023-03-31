@@ -11,7 +11,6 @@ import lombok.ToString;
 @Setter
 @Getter
 @NoArgsConstructor
-
 public class HomeKitchen extends AbstractKitchen {
 
     private String typeOfPlate;
