@@ -5,13 +5,13 @@ import lombok.NoArgsConstructor;
 import lombok.Setter;
 import lombok.ToString;
 
-import java.util.Random;
-
 @ToString(callSuper = true)
 @Getter
 @NoArgsConstructor
 @Setter
+
 public class Pizzeria extends AbstractKitchen{
+
     private int yearOfFoundation;
     private String typeOfDrinks;
     private int capacityOfSeats;
@@ -27,7 +27,7 @@ public class Pizzeria extends AbstractKitchen{
 
     @Override
     public void addGuests(int guests) {
-        setCapacity(+guests);
+        setCapacity(capacity + guests);
     }
 
     @Override
@@ -35,4 +35,5 @@ public class Pizzeria extends AbstractKitchen{
         System.out.println("Type of kitchen: " + KitchenTypes.AMERICAN);
         return KitchenTypes.AMERICAN;
     }
+
 }
