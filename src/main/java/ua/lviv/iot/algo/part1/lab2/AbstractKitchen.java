@@ -20,11 +20,12 @@ enum KitchenTypes{
 @AllArgsConstructor
 @NoArgsConstructor
 @ToString
+
 public abstract class AbstractKitchen {
+
     private String name;
     private int capacity;
     private int size;
-
 
     public abstract void addGuests(int guests);
     public abstract KitchenTypes kitchenType();
