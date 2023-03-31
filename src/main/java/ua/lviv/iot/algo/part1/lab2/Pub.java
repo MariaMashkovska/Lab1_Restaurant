@@ -11,7 +11,6 @@ import java.util.Random;
 @Setter
 @Getter
 @NoArgsConstructor
-
 public class Pub extends AbstractKitchen{
 
     private int yearOfFoundation;
