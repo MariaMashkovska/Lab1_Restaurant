@@ -12,7 +12,6 @@ import java.util.Random;
 @Getter
 @NoArgsConstructor
 @ToString(callSuper = true)
-
 public class Restaurant extends AbstractKitchen{
 
     private static Restaurant instance;
