@@ -1,5 +1,7 @@
 package ua.lviv.iot.algo.part1.lab2;
 
+import com.sun.source.tree.ReturnTree;
+import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
@@ -9,7 +11,9 @@ import lombok.ToString;
 @Setter
 @Getter
 @NoArgsConstructor
+
 public class HomeKitchen extends AbstractKitchen {
+
     private String typeOfPlate;
     private String nameOfHood;
 
@@ -21,11 +25,13 @@ public class HomeKitchen extends AbstractKitchen {
 
     @Override
     public void addGuests(int guests) {
-        setCapacity(+guests);
+        setCapacity(capacity + guests);
     }
+
     @Override
     public KitchenTypes kitchenType() {
         System.out.println("Type of kitchen: " + KitchenTypes.UKRAINIAN);
         return KitchenTypes.UKRAINIAN;
     }
+
 }
