@@ -20,7 +20,6 @@ enum KitchenTypes{
 @AllArgsConstructor
 @NoArgsConstructor
 @ToString
-
 public abstract class AbstractKitchen {
 
     private String name;
