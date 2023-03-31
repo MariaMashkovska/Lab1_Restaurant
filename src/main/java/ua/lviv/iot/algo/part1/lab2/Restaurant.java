@@ -12,7 +12,9 @@ import java.util.Random;
 @Getter
 @NoArgsConstructor
 @ToString(callSuper = true)
+
 public class Restaurant extends AbstractKitchen{
+
     private static Restaurant instance;
     private int yearOfFoundation;
     private int rating;
@@ -29,7 +31,6 @@ public class Restaurant extends AbstractKitchen{
         this.currentGuestsCapacity = currentGuestsCapacity;
     }
 
-
     public static Restaurant getInstance() {
         if (instance == null) {
             instance = new Restaurant();
@@ -42,26 +43,28 @@ public class Restaurant extends AbstractKitchen{
             currentGuestsCapacity += numOfGuests;
             return true;
         }
-
         return false;
     }
 
     public void removeReservation(int numOfGuests) {
         currentGuestsCapacity = Math.max(currentGuestsCapacity - numOfGuests, 0);
     }
+
     @Override
     public void addGuests(int guests) {
-        setCapacity(+guests);
-    }
+        setCapacity(capacity + guests);
+    } 
 
     @Override
     public KitchenTypes kitchenType() {
         KitchenTypes[] types = KitchenTypes.values();
+
         Random random = new Random();
         KitchenTypes randomType = types[random.nextInt(types.length)];
+
         System.out.println("Type of kitchen: " + randomType);
+
         return randomType;
     }
-
 
 }
