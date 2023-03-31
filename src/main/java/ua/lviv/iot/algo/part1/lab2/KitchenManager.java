@@ -7,7 +7,6 @@ import java.util.List;
 import java.util.stream.Collectors;
 
 @ToString(callSuper = true)
-
 public class KitchenManager {
 
     private List<AbstractKitchen> kitchens = new LinkedList<>();
