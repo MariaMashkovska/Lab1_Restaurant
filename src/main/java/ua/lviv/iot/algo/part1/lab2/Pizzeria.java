@@ -9,7 +9,6 @@ import lombok.ToString;
 @Getter
 @NoArgsConstructor
 @Setter
-
 public class Pizzeria extends AbstractKitchen{
 
     private int yearOfFoundation;
