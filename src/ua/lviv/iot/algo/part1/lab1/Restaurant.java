@@ -1,33 +1,18 @@
 package ua.lviv.iot.algo.part1.lab1;
 
-import lombok.Getter;
-import lombok.NoArgsConstructor;
-import lombok.Setter;
-import lombok.ToString;
+import lombok.*;
 
-import java.util.Random;
-
+@NoArgsConstructor
+@AllArgsConstructor
 @Setter
 @Getter
-@NoArgsConstructor
-@ToString(callSuper = true)
-public class Restaurant extends AbstractKitchen{
+@ToString
+public class Restaurant {
     private static Restaurant instance;
-    private int yearOfFoundation;
+    private String name;
     private int rating;
-    private int maxGuestsCapacity;
-    private int currentGuestsCapacity;
-    private final String openingTime="9:00";
-    private final String closingTime="18:00";
-
-    public Restaurant(String name, int capacity, int size, int yearOfFoundation, int rating, int maxGuestsCapacity, int currentGuestsCapacity) {
-        super(name, capacity, size); //сапер викликає конструктор з батьківського класу який приймає поля з абстракт класу
-        this.yearOfFoundation = yearOfFoundation;
-        this.rating = rating;
-        this.maxGuestsCapacity = maxGuestsCapacity;
-        this.currentGuestsCapacity = currentGuestsCapacity;
-    }
-
+    private int maxCapacity;
+    private int currentCapacity;
 
     public static Restaurant getInstance() {
         if (instance == null) {
@@ -37,8 +22,8 @@ public class Restaurant extends AbstractKitchen{
     }
 
     public boolean acceptReservation(int numOfGuests) {
-        if (currentGuestsCapacity + numOfGuests <= maxGuestsCapacity) {
-            currentGuestsCapacity += numOfGuests;
+        if (currentCapacity + numOfGuests <= maxCapacity) {
+            currentCapacity += numOfGuests;
             return true;
         }
 
@@ -46,21 +31,25 @@ public class Restaurant extends AbstractKitchen{
     }
 
     public void removeReservation(int numOfGuests) {
-        currentGuestsCapacity = Math.max(currentGuestsCapacity - numOfGuests, 0);
-    }
-    @Override
-    public void addGuests(int guests) {
-        setCapacity(+guests);
+        currentCapacity = Math.max(currentCapacity - numOfGuests, 0);
     }
 
-    @Override
-    public KitchenTypes kitchenType() {
-        KitchenTypes[] types = KitchenTypes.values();
-        Random random = new Random();
-        KitchenTypes randomType = types[random.nextInt(types.length)];
-        System.out.println("Type of kitchen: " + randomType);
-        return randomType;
-    }
+    public static void main(String[] args) {
+        Restaurant[] restaurants = new Restaurant[4];
+        restaurants[0] = new Restaurant("Kafe-bar Oksana ", 10, 23, 20);
+        restaurants[1] = new Restaurant();
+        restaurants[2] = getInstance();
+        restaurants[3] = getInstance();
 
+//        for (int i = 0; i < restaurants.length; i++) {
+//            System.out.println(restaurants[i].toString());
+//        }
+
+        for (Restaurant restaurant : restaurants) {
+            System.out.println(restaurant.toString());
+        }
+
+    }
 
 }
+
