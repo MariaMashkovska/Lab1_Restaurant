@@ -7,8 +7,9 @@ import lombok.ToString;
 
 @ToString(callSuper = true)
 @Setter
-@Getter
 @NoArgsConstructor
+@Getter
+
 public class HomeKitchen extends AbstractKitchen {
     private String typeOfPlate;
     private String nameOfHood;
@@ -20,12 +21,16 @@ public class HomeKitchen extends AbstractKitchen {
     }
 
     @Override
-    public void addGuests(int guests) {
-        setCapacity(+guests);
+    public int addGuests(int guests) {
+        int result;
+        result = getCapacity() + guests;
+        return result;
     }
+
     @Override
     public KitchenTypes kitchenType() {
         System.out.println("Type of kitchen: " + KitchenTypes.UKRAINIAN);
         return KitchenTypes.UKRAINIAN;
     }
+
 }

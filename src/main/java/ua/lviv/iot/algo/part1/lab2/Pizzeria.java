@@ -16,7 +16,7 @@ public class Pizzeria extends AbstractKitchen{
     private int capacityOfAnimatronics;
 
     public Pizzeria(String name, int capacity, int size, int yearOfFoundation, String typeOfDrinks, int capacityOfSeats, int capacityOfAnimatronics) {
-//        super(name, capacity, size);
+        super(name, capacity, size);
         this.yearOfFoundation = yearOfFoundation;
         this.typeOfDrinks = typeOfDrinks;
         this.capacityOfSeats = capacityOfSeats;
@@ -24,8 +24,10 @@ public class Pizzeria extends AbstractKitchen{
     }
 
     @Override
-    public void addGuests(int guests) {
-        setCapacity(+guests);
+    public int addGuests(int guests) {
+        int result;
+        result = getCapacity() + guests;
+        return result;
     }
 
     @Override

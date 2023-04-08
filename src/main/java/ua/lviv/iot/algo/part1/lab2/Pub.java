@@ -24,8 +24,10 @@ public class Pub extends AbstractKitchen{
     }
 
     @Override
-    public void addGuests(int guests) {
-        setCapacity(+guests);
+    public int addGuests(int guests) {
+        int result;
+        result = getCapacity() + guests;
+        return result;
     }
 
     @Override

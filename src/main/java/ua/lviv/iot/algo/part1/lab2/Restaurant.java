@@ -1,6 +1,5 @@
 package ua.lviv.iot.algo.part1.lab2;
 
-import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
@@ -22,7 +21,7 @@ public class Restaurant extends AbstractKitchen{
     private final String closingTime="18:00";
 
     public Restaurant(String name, int capacity, int size, int yearOfFoundation, int rating, int maxGuestsCapacity, int currentGuestsCapacity) {
-        super(name, capacity, size); //сапер викликає конструктор з батьківського класу який приймає поля з абстракт класу
+        super(name, capacity, size);
         this.yearOfFoundation = yearOfFoundation;
         this.rating = rating;
         this.maxGuestsCapacity = maxGuestsCapacity;
@@ -49,9 +48,12 @@ public class Restaurant extends AbstractKitchen{
     public void removeReservation(int numOfGuests) {
         currentGuestsCapacity = Math.max(currentGuestsCapacity - numOfGuests, 0);
     }
+
     @Override
-    public void addGuests(int guests) {
-        setCapacity(+guests);
+    public int addGuests(int guests) {
+        int result;
+        result = getCapacity() + guests;
+        return result;
     }
 
     @Override

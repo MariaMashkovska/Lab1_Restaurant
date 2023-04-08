@@ -1,5 +1,7 @@
 package ua.lviv.iot.algo.part1.lab2;
 
+import lombok.Generated;
+import lombok.Getter;
 import lombok.ToString;
 
 import java.util.LinkedList;
@@ -7,7 +9,8 @@ import java.util.List;
 import java.util.stream.Collectors;
 import java.util.stream.Stream;
 
-@ToString(callSuper = true)
+@ToString
+@Getter
 public class KitchenManager {
     private List<AbstractKitchen> kitchens = new LinkedList<>();
 
@@ -28,9 +31,9 @@ public class KitchenManager {
                 collect(Collectors.toList());
     }
 
-
+    @Generated
     public static void main(String[] args) {
-//        addKitchen();
+
         KitchenManager manager = new KitchenManager();
         manager.addKitchen(new Restaurant("5-star Restaurant Lola", 200, 60, 2007, 10, 150, 34));
         manager.addKitchen(new Restaurant("Restaurant Chebureki v Oleny", 20, 30, 2017, 8, 18, 7));
@@ -45,8 +48,6 @@ public class KitchenManager {
             System.out.println(kitchen.toString());
             kitchen.kitchenType();
         }
-
-//        manager.kitchens.forEach();
 
         System.out.println(manager.findAllBiggerThan(50));
         System.out.println(manager.findBiggerCapacityThan(100));
