@@ -11,12 +11,18 @@ import java.util.Random;
 @Setter
 @Getter
 @NoArgsConstructor
-public class Pub extends AbstractKitchen{
+public class Pub extends AbstractKitchen {
+
     private int yearOfFoundation;
     private String typeOfDrinks;
     private int maxCapacityOfGuests;
 
-    public Pub(String name, int capacity, int size, int yearOfFoundation, String typeOfDrinks, int maxCapacityOfGuests) {
+    public Pub(final String name,
+               final int capacity,
+               final int size,
+               final int yearOfFoundation,
+               final String typeOfDrinks,
+               final int maxCapacityOfGuests) {
         super(name, capacity, size);
         this.yearOfFoundation = yearOfFoundation;
         this.typeOfDrinks = typeOfDrinks;
@@ -38,4 +44,5 @@ public class Pub extends AbstractKitchen{
         System.out.println("Type of kitchen: " + randomType);
         return randomType;
     }
+
 }

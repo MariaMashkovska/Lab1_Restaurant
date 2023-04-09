@@ -5,17 +5,28 @@ import lombok.NoArgsConstructor;
 import lombok.Setter;
 import lombok.ToString;
 
+/**
+ * Pizzeria class represents a pizzeria kitchen.
+ * It extends AbstractKitchen class.
+ */
 @ToString(callSuper = true)
 @Getter
 @NoArgsConstructor
 @Setter
-public class Pizzeria extends AbstractKitchen{
+public class Pizzeria extends AbstractKitchen {
+
     private int yearOfFoundation;
     private String typeOfDrinks;
     private int capacityOfSeats;
     private int capacityOfAnimatronics;
 
-    public Pizzeria(String name, int capacity, int size, int yearOfFoundation, String typeOfDrinks, int capacityOfSeats, int capacityOfAnimatronics) {
+    public Pizzeria(final String name,
+                    final int capacity,
+                    final int size,
+                    final int yearOfFoundation,
+                    final String typeOfDrinks,
+                    final int capacityOfSeats,
+                    final int capacityOfAnimatronics) {
         super(name, capacity, size);
         this.yearOfFoundation = yearOfFoundation;
         this.typeOfDrinks = typeOfDrinks;
@@ -24,10 +35,8 @@ public class Pizzeria extends AbstractKitchen{
     }
 
     @Override
-    public int addGuests(int guests) {
-        int result;
-        result = getCapacity() + guests;
-        return result;
+    public int addGuests(final int guests) {
+        return getCapacity() + guests;
     }
 
     @Override

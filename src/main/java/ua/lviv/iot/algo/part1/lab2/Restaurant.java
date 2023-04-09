@@ -11,7 +11,8 @@ import java.util.Random;
 @Getter
 @NoArgsConstructor
 @ToString(callSuper = true)
-public class Restaurant extends AbstractKitchen{
+public class Restaurant extends AbstractKitchen {
+
     private static Restaurant instance;
     private int yearOfFoundation;
     private int rating;
@@ -20,14 +21,19 @@ public class Restaurant extends AbstractKitchen{
     private final String openingTime="9:00";
     private final String closingTime="18:00";
 
-    public Restaurant(String name, int capacity, int size, int yearOfFoundation, int rating, int maxGuestsCapacity, int currentGuestsCapacity) {
+    public Restaurant(final String name,
+                      final int capacity,
+                      final int size,
+                      final int yearOfFoundation,
+                      final int rating,
+                      final int maxGuestsCapacity,
+                      final int currentGuestsCapacity) {
         super(name, capacity, size);
         this.yearOfFoundation = yearOfFoundation;
         this.rating = rating;
         this.maxGuestsCapacity = maxGuestsCapacity;
         this.currentGuestsCapacity = currentGuestsCapacity;
     }
-
 
     public static Restaurant getInstance() {
         if (instance == null) {
@@ -64,6 +70,5 @@ public class Restaurant extends AbstractKitchen{
         System.out.println("Type of kitchen: " + randomType);
         return randomType;
     }
-
 
 }

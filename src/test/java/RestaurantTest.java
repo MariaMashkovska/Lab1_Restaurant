@@ -5,7 +5,7 @@ import ua.lviv.iot.algo.part1.lab2.Restaurant;
 
 import static org.junit.jupiter.api.Assertions.*;
 
-class RestaurantTest {
+class   RestaurantTest {
     @Test
     public void testConstructor() {
         Restaurant restaurant = new Restaurant("5-star Restaurant Lola", 200, 60, 2007, 10, 150, 34);
