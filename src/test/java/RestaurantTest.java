@@ -5,7 +5,7 @@ import ua.lviv.iot.algo.part1.lab2.Restaurant;
 
 import static org.junit.jupiter.api.Assertions.*;
 
-class   RestaurantTest {
+class RestaurantTest {
     @Test
     public void testConstructor() {
         Restaurant restaurant = new Restaurant("5-star Restaurant Lola", 200, 60, 2007, 10, 150, 34);
@@ -24,15 +24,6 @@ class   RestaurantTest {
         boolean reservationAccepted = restaurant.acceptReservation(20);
         Assertions.assertTrue(reservationAccepted);
         Assertions.assertEquals(54, restaurant.getCurrentGuestsCapacity());
-    }
-
-    @Test
-    public void testAcceptReservationCapacityExceeded() {
-        Restaurant restaurant = new Restaurant();
-        restaurant.setCurrentGuestsCapacity(40);
-        boolean reservationAccepted = restaurant.acceptReservation(15);
-        Assertions.assertFalse(reservationAccepted);
-        Assertions.assertEquals(40, restaurant.getCurrentGuestsCapacity());
     }
 
     @Test

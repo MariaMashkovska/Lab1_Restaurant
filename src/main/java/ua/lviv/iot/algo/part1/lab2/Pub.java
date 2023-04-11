@@ -13,6 +13,7 @@ import java.util.Random;
 @NoArgsConstructor
 public class Pub extends AbstractKitchen {
 
+    private static final Random random = new Random();
     private int yearOfFoundation;
     private String typeOfDrinks;
     private int maxCapacityOfGuests;
@@ -39,7 +40,6 @@ public class Pub extends AbstractKitchen {
     @Override
     public KitchenTypes kitchenType() {
         KitchenTypes[] types = KitchenTypes.values();
-        Random random = new Random();
         KitchenTypes randomType = types[random.nextInt(types.length)];
         System.out.println("Type of kitchen: " + randomType);
         return randomType;

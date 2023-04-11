@@ -5,10 +5,6 @@ import lombok.NoArgsConstructor;
 import lombok.Setter;
 import lombok.ToString;
 
-/**
- * Pizzeria class represents a pizzeria kitchen.
- * It extends AbstractKitchen class.
- */
 @ToString(callSuper = true)
 @Getter
 @NoArgsConstructor
