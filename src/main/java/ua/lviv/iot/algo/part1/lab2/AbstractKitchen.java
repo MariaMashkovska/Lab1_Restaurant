@@ -1,19 +1,10 @@
-package ua.lviv.iot.algo.part1.lab1;
+package ua.lviv.iot.algo.part1.lab2;
 
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 import lombok.ToString;
-
-enum KitchenTypes{
-    UKRAINIAN,
-    JAPANESE,
-    POLISH,
-    CHINESE,
-    AMERICAN,
-    KOREAN
-}
 
 @Getter
 @Setter
@@ -26,7 +17,7 @@ public abstract class AbstractKitchen {
     private int size;
 
 
-    public abstract void addGuests(int guests);
+    public abstract int addGuests(int guests);
     public abstract KitchenTypes kitchenType();
 
 }

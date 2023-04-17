@@ -1,4 +1,4 @@
-package ua.lviv.iot.algo.part1.lab1;
+package ua.lviv.iot.algo.part1.lab2;
 
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -11,29 +11,37 @@ import java.util.Random;
 @Getter
 @NoArgsConstructor
 @ToString(callSuper = true)
-public class Restaurant extends AbstractKitchen{
+public class Restaurant extends AbstractKitchen {
+
     private static Restaurant instance;
+    private static final Random RANDOM = new Random();
     private int yearOfFoundation;
     private int rating;
     private int maxGuestsCapacity;
     private int currentGuestsCapacity;
-    private final String openingTime="9:00";
-    private final String closingTime="18:00";
+    private final String openingTime = "9:00";
+    private final String closingTime = "18:00";
 
-    public Restaurant(String name, int capacity, int size, int yearOfFoundation, int rating, int maxGuestsCapacity, int currentGuestsCapacity) {
-        super(name, capacity, size); //сапер викликає конструктор з батьківського класу який приймає поля з абстракт класу
+    public Restaurant(final String name,
+                      final int capacity,
+                      final int size,
+                      final int yearOfFoundation,
+                      final int rating,
+                      final int maxGuestsCapacity,
+                      final int currentGuestsCapacity
+                        ) {
+        super(name, capacity, size);
         this.yearOfFoundation = yearOfFoundation;
         this.rating = rating;
         this.maxGuestsCapacity = maxGuestsCapacity;
         this.currentGuestsCapacity = currentGuestsCapacity;
     }
 
-
     public static Restaurant getInstance() {
         if (instance == null) {
             instance = new Restaurant();
         }
-        return instance;
+        return Restaurant.instance;
     }
 
     public boolean acceptReservation(int numOfGuests) {
@@ -46,21 +54,23 @@ public class Restaurant extends AbstractKitchen{
     }
 
     public void removeReservation(int numOfGuests) {
-        currentGuestsCapacity = Math.max(currentGuestsCapacity - numOfGuests, 0);
+        currentGuestsCapacity = Math.
+                max(currentGuestsCapacity - numOfGuests, 0);
     }
+
     @Override
-    public void addGuests(int guests) {
-        setCapacity(+guests);
+    public int addGuests(int guests) {
+        int result;
+        result = getCapacity() + guests;
+        return result;
     }
 
     @Override
     public KitchenTypes kitchenType() {
         KitchenTypes[] types = KitchenTypes.values();
-        Random random = new Random();
-        KitchenTypes randomType = types[random.nextInt(types.length)];
+        KitchenTypes randomType = types[RANDOM.nextInt(types.length)];
         System.out.println("Type of kitchen: " + randomType);
         return randomType;
     }
-
 
 }

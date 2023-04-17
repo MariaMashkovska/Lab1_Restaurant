@@ -1,4 +1,4 @@
-package ua.lviv.iot.algo.part1.lab1;
+package ua.lviv.iot.algo.part1.lab2;
 
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -11,12 +11,19 @@ import java.util.Random;
 @Setter
 @Getter
 @NoArgsConstructor
-public class Pub extends AbstractKitchen{
+public class Pub extends AbstractKitchen {
+
+    private static final Random random = new Random();
     private int yearOfFoundation;
     private String typeOfDrinks;
     private int maxCapacityOfGuests;
 
-    public Pub(String name, int capacity, int size, int yearOfFoundation, String typeOfDrinks, int maxCapacityOfGuests) {
+    public Pub(final String name,
+               final int capacity,
+               final int size,
+               final int yearOfFoundation,
+               final String typeOfDrinks,
+               final int maxCapacityOfGuests) {
         super(name, capacity, size);
         this.yearOfFoundation = yearOfFoundation;
         this.typeOfDrinks = typeOfDrinks;
@@ -24,16 +31,18 @@ public class Pub extends AbstractKitchen{
     }
 
     @Override
-    public void addGuests(int guests) {
-        setCapacity(+guests);
+    public int addGuests(int guests) {
+        int result;
+        result = getCapacity() + guests;
+        return result;
     }
 
     @Override
     public KitchenTypes kitchenType() {
         KitchenTypes[] types = KitchenTypes.values();
-        Random random = new Random();
         KitchenTypes randomType = types[random.nextInt(types.length)];
         System.out.println("Type of kitchen: " + randomType);
         return randomType;
     }
+
 }

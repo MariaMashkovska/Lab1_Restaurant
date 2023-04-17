@@ -1,4 +1,4 @@
-package ua.lviv.iot.algo.part1.lab1;
+package ua.lviv.iot.algo.part1.lab2;
 
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -9,14 +9,21 @@ import lombok.ToString;
 @Getter
 @NoArgsConstructor
 @Setter
-public class Pizzeria extends AbstractKitchen{
+public class Pizzeria extends AbstractKitchen {
+
     private int yearOfFoundation;
     private String typeOfDrinks;
     private int capacityOfSeats;
     private int capacityOfAnimatronics;
 
-    public Pizzeria(String name, int capacity, int size, int yearOfFoundation, String typeOfDrinks, int capacityOfSeats, int capacityOfAnimatronics) {
-//        super(name, capacity, size);
+    public Pizzeria(final String name,
+                    final int capacity,
+                    final int size,
+                    final int yearOfFoundation,
+                    final String typeOfDrinks,
+                    final int capacityOfSeats,
+                    final int capacityOfAnimatronics) {
+        super(name, capacity, size);
         this.yearOfFoundation = yearOfFoundation;
         this.typeOfDrinks = typeOfDrinks;
         this.capacityOfSeats = capacityOfSeats;
@@ -24,8 +31,8 @@ public class Pizzeria extends AbstractKitchen{
     }
 
     @Override
-    public void addGuests(int guests) {
-        setCapacity(+guests);
+    public int addGuests(final int guests) {
+        return getCapacity() + guests;
     }
 
     @Override
