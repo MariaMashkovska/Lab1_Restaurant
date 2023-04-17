@@ -18,6 +18,18 @@ public class Pub extends AbstractKitchen {
     private String typeOfDrinks;
     private int maxCapacityOfGuests;
 
+    public String getHeaders() {
+        return super.getHeaders() + "," + "yearOfFoundation" +
+                                    "," + "typeOfDrinks" +
+                                    "," + "maxCapacityOfGuests";
+    }
+
+    public String toCSV(){
+        return  super.toCSV()  + "," + yearOfFoundation + "," +
+                typeOfDrinks + "," +
+                maxCapacityOfGuests;
+    }
+
     public Pub(final String name,
                final int capacity,
                final int size,

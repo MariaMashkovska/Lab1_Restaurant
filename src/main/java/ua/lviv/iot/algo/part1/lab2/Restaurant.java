@@ -19,8 +19,26 @@ public class Restaurant extends AbstractKitchen {
     private int rating;
     private int maxGuestsCapacity;
     private int currentGuestsCapacity;
-    private final String openingTime = "9:00";
-    private final String closingTime = "18:00";
+    private String openingTime = "9:00";
+    private String closingTime = "18:00";
+
+    public String getHeaders() {
+        return super.getHeaders() + "," + "yearOfFoundation" +
+                                    "," + "rating" +
+                                    "," + "maxGuestsCapacity" +
+                                    "," + "currentGuestsCapacity" +
+                                    "," + "openingTime" +
+                                    "," + "closingTime";
+    }
+
+    public String toCSV(){
+        return  super.toCSV() + "," + yearOfFoundation + "," +
+                rating + "," +
+                maxGuestsCapacity + "," +
+                currentGuestsCapacity + "," +
+                openingTime + "," +
+                closingTime;
+    }
 
     public Restaurant(final String name,
                       final int capacity,
@@ -44,7 +62,7 @@ public class Restaurant extends AbstractKitchen {
         return Restaurant.instance;
     }
 
-    public boolean acceptReservation(int numOfGuests) {
+    public boolean acceptReservation(final int numOfGuests) {
         if (currentGuestsCapacity + numOfGuests <= maxGuestsCapacity) {
             currentGuestsCapacity += numOfGuests;
             return true;
@@ -53,13 +71,13 @@ public class Restaurant extends AbstractKitchen {
         return false;
     }
 
-    public void removeReservation(int numOfGuests) {
+    public void removeReservation(final int numOfGuests) {
         currentGuestsCapacity = Math.
                 max(currentGuestsCapacity - numOfGuests, 0);
     }
 
     @Override
-    public int addGuests(int guests) {
+    public int addGuests(final int guests) {
         int result;
         result = getCapacity() + guests;
         return result;

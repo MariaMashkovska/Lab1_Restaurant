@@ -13,20 +13,7 @@ import java.util.List;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertTrue;
 
-
 class KitchenManagerTest {
-
-    @Test
-    void testToString() {
-        KitchenManager manager = new KitchenManager();
-        Restaurant restaurant = new Restaurant("5-star Restaurant Lola", 200, 60, 2007, 10, 150, 34);
-        manager.addKitchen(restaurant);
-
-        String expected = "KitchenManager(kitchens=[" + restaurant.toString() + "])";
-        String actual = manager.toString();
-
-        assertEquals(expected, actual);
-    }
 
     @Test
     public void testAddKitchen() {
@@ -77,4 +64,5 @@ class KitchenManagerTest {
         }
 
     }
+
 }

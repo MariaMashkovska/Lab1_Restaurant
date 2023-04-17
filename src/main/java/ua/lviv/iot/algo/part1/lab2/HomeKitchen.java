@@ -17,6 +17,15 @@ public class HomeKitchen extends AbstractKitchen {
     private String typeOfPlate;
     private String nameOfHood;
 
+    public String getHeaders() {
+        return super.getHeaders() + "," + "typeOfPlate"
+                                  + "," + "nameOfHood";
+    }
+    public String toCSV(){
+        return super.toCSV() + "," + typeOfPlate
+                             + "," + nameOfHood;
+    }
+
     public HomeKitchen(final String name,
                        final int capacity,
                        final int size,

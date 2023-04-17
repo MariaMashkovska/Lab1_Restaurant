@@ -1,13 +1,11 @@
 package ua.lviv.iot.algo.part1.lab2;
 
-import lombok.Generated;
 import lombok.Getter;
 import lombok.ToString;
 
 import java.util.LinkedList;
 import java.util.List;
 import java.util.stream.Collectors;
-import java.util.stream.Stream;
 
 @ToString
 @Getter
@@ -30,5 +28,5 @@ public class KitchenManager {
                         .filter(kitch -> kitch.getCapacity() > capacity)
                         .collect(Collectors.toList());
     }
-    
+
 }

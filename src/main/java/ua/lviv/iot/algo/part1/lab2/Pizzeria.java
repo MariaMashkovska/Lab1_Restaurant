@@ -16,6 +16,20 @@ public class Pizzeria extends AbstractKitchen {
     private int capacityOfSeats;
     private int capacityOfAnimatronics;
 
+    public String getHeaders() {
+        return super.getHeaders() + "," + "yearOfFoundation" +
+                                    "," + "typeOfDrinks" +
+                                    "," + "capacityOfSeats" +
+                                    "," + "capacityOfAnimatronics";
+    }
+
+    public String toCSV(){
+        return  super.toCSV() + "," + yearOfFoundation + "," +
+                typeOfDrinks + "," +
+                capacityOfSeats + "," +
+                capacityOfAnimatronics;
+    }
+
     public Pizzeria(final String name,
                     final int capacity,
                     final int size,
