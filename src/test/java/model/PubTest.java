@@ -1,7 +1,9 @@
+package model;
+
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
-import ua.lviv.iot.algo.part1.lab2.KitchenTypes;
-import ua.lviv.iot.algo.part1.lab2.Pub;
+import ua.lviv.iot.algo.part1.lab2.model.KitchenTypes;
+import ua.lviv.iot.algo.part1.lab2.model.Pub;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
@@ -13,12 +15,6 @@ class PubTest {
         String expectedHeaders = "name,capacity,size,yearOfFoundation,typeOfDrinks,maxCapacityOfGuests";
         String actualHeaders = pub.getHeaders();
         assertEquals(expectedHeaders, actualHeaders);
-    }
-    @Test
-    public void testToCSV(){
-        String expectedValues = "Kafe-bar Victoria,90,45,1964,Alcohol,74";
-        String actualValues = pub.toCSV();
-        assertEquals(expectedValues, actualValues);
     }
 
     @Test

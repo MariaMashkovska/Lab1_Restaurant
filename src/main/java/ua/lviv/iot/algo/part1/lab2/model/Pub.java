@@ -1,4 +1,4 @@
-package ua.lviv.iot.algo.part1.lab2;
+package ua.lviv.iot.algo.part1.lab2.model;
 
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -19,15 +19,15 @@ public class Pub extends AbstractKitchen {
     private int maxCapacityOfGuests;
 
     public String getHeaders() {
-        return super.getHeaders() + "," + "yearOfFoundation" +
-                                    "," + "typeOfDrinks" +
-                                    "," + "maxCapacityOfGuests";
+        return super.getHeaders() + "," + "yearOfFoundation"
+                                    + "," + "typeOfDrinks"
+                                    + "," + "maxCapacityOfGuests";
     }
 
-    public String toCSV(){
-        return  super.toCSV()  + "," + yearOfFoundation + "," +
-                typeOfDrinks + "," +
-                maxCapacityOfGuests;
+    public String toCSV() {
+        return  super.toCSV()  + "," + yearOfFoundation + ","
+               + typeOfDrinks + ","
+               + maxCapacityOfGuests;
     }
 
     public Pub(final String name,

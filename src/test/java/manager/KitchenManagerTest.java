@@ -1,11 +1,13 @@
+package manager;
+
 import org.junit.jupiter.api.Test;
 
-import ua.lviv.iot.algo.part1.lab2.KitchenManager;
-import ua.lviv.iot.algo.part1.lab2.Restaurant;
-import ua.lviv.iot.algo.part1.lab2.AbstractKitchen;
-import ua.lviv.iot.algo.part1.lab2.HomeKitchen;
-import ua.lviv.iot.algo.part1.lab2.Pizzeria;
-import ua.lviv.iot.algo.part1.lab2.Pub;
+import ua.lviv.iot.algo.part1.lab2.manager.KitchenManager;
+import ua.lviv.iot.algo.part1.lab2.model.Restaurant;
+import ua.lviv.iot.algo.part1.lab2.model.AbstractKitchen;
+import ua.lviv.iot.algo.part1.lab2.model.HomeKitchen;
+import ua.lviv.iot.algo.part1.lab2.model.Pizzeria;
+import ua.lviv.iot.algo.part1.lab2.model.Pub;
 
 
 import java.util.List;

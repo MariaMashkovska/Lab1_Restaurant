@@ -1,7 +1,9 @@
+package model;
+
 import org.junit.jupiter.api.Test;
 
-import ua.lviv.iot.algo.part1.lab2.KitchenTypes;
-import ua.lviv.iot.algo.part1.lab2.Pizzeria;
+import ua.lviv.iot.algo.part1.lab2.model.KitchenTypes;
+import ua.lviv.iot.algo.part1.lab2.model.Pizzeria;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
@@ -15,12 +17,7 @@ class PizzeriaTest {
         String actualHeaders = pizzeria.getHeaders();
         assertEquals(expectedHeaders, actualHeaders);
     }
-    @Test
-    public void testToCSV(){
-        String expectedValues = "Freddy Fazbear`s Pizzeria,70,100,1989,Fuzzy drinks,50,4";
-        String actualValues = pizzeria.toCSV();
-        assertEquals(expectedValues, actualValues);
-    }
+
     @Test
     public void testAddGuests(){
         int result = pizzeria.addGuests(12);

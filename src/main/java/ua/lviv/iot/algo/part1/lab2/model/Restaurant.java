@@ -1,4 +1,4 @@
-package ua.lviv.iot.algo.part1.lab2;
+package ua.lviv.iot.algo.part1.lab2.model;
 
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -23,21 +23,21 @@ public class Restaurant extends AbstractKitchen {
     private String closingTime = "18:00";
 
     public String getHeaders() {
-        return super.getHeaders() + "," + "yearOfFoundation" +
-                                    "," + "rating" +
-                                    "," + "maxGuestsCapacity" +
-                                    "," + "currentGuestsCapacity" +
-                                    "," + "openingTime" +
-                                    "," + "closingTime";
+        return super.getHeaders() + "," + "yearOfFoundation"
+                                  +  "," + "rating"
+                                  +  "," + "maxGuestsCapacity"
+                                  +  "," + "currentGuestsCapacity"
+                                  +  "," + "openingTime"
+                                  +  "," + "closingTime";
     }
 
-    public String toCSV(){
-        return  super.toCSV() + "," + yearOfFoundation + "," +
-                rating + "," +
-                maxGuestsCapacity + "," +
-                currentGuestsCapacity + "," +
-                openingTime + "," +
-                closingTime;
+    public String toCSV() {
+        return  super.toCSV() + "," + yearOfFoundation + ","
+                 + rating + ","
+                + maxGuestsCapacity + ","
+                + currentGuestsCapacity + ","
+                + openingTime + ","
+                + closingTime;
     }
 
     public Restaurant(final String name,

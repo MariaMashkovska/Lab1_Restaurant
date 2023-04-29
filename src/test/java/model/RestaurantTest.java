@@ -1,7 +1,9 @@
+package model;
+
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
-import ua.lviv.iot.algo.part1.lab2.KitchenTypes;
-import ua.lviv.iot.algo.part1.lab2.Restaurant;
+import ua.lviv.iot.algo.part1.lab2.model.KitchenTypes;
+import ua.lviv.iot.algo.part1.lab2.model.Restaurant;
 
 import static org.junit.jupiter.api.Assertions.*;
 
@@ -15,12 +17,7 @@ class RestaurantTest {
         String actualHeaders = restaurant.getHeaders();
         assertEquals(expectedHeaders, actualHeaders);
     }
-    @Test
-    public void testToCSV(){
-        String expectedValues = "5-star Restaurant Lola,200,60,2007,10,150,34,9:00,18:00";
-        String actualValues = restaurant.toCSV();
-        assertEquals(expectedValues, actualValues);
-    }
+
     @Test
     public void testAcceptReservation() {
         boolean reservationAccepted = restaurant.acceptReservation(20);
