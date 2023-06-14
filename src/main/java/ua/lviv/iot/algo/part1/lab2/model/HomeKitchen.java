@@ -1,4 +1,4 @@
-package ua.lviv.iot.algo.part1.lab2;
+package ua.lviv.iot.algo.part1.lab2.model;
 
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -16,6 +16,15 @@ public class HomeKitchen extends AbstractKitchen {
 
     private String typeOfPlate;
     private String nameOfHood;
+
+    public String getHeaders() {
+        return super.getHeaders() + "," + "typeOfPlate"
+                                  + "," + "nameOfHood";
+    }
+    public String toCSV(){
+        return super.toCSV() + "," + typeOfPlate
+                             + "," + nameOfHood;
+    }
 
     public HomeKitchen(final String name,
                        final int capacity,

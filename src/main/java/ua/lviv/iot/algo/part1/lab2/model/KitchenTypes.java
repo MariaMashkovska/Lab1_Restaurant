@@ -1,4 +1,4 @@
-package ua.lviv.iot.algo.part1.lab2;
+package ua.lviv.iot.algo.part1.lab2.model;
 
  public enum KitchenTypes {
     UKRAINIAN,

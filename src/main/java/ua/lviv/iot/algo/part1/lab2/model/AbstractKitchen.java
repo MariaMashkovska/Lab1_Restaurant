@@ -1,4 +1,4 @@
-package ua.lviv.iot.algo.part1.lab2;
+package ua.lviv.iot.algo.part1.lab2.model;
 
 import lombok.AllArgsConstructor;
 import lombok.Getter;
@@ -15,6 +15,18 @@ public abstract class AbstractKitchen {
     private String name;
     private int capacity;
     private int size;
+    public String getHeaders() {
+        return  "name" + ","
+                + "capacity" + ","
+                + "size";
+    }
+
+    public String toCSV() {
+        return  name + ","
+            + capacity + ","
+                + size;
+    }
+
 
 
     public abstract int addGuests(int guests);

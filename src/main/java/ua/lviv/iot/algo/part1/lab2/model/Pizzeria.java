@@ -1,4 +1,4 @@
-package ua.lviv.iot.algo.part1.lab2;
+package ua.lviv.iot.algo.part1.lab2.model;
 
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -15,6 +15,20 @@ public class Pizzeria extends AbstractKitchen {
     private String typeOfDrinks;
     private int capacityOfSeats;
     private int capacityOfAnimatronics;
+
+    public String getHeaders() {
+        return super.getHeaders() + "," + "yearOfFoundation"
+                                    + "," + "typeOfDrinks"
+                                   + "," + "capacityOfSeats"
+                                    + "," + "capacityOfAnimatronics";
+    }
+
+    public String toCSV(){
+        return  super.toCSV() + "," + yearOfFoundation + ","
+                + typeOfDrinks + ","
+                + capacityOfSeats + ","
+                + capacityOfAnimatronics;
+    }
 
     public Pizzeria(final String name,
                     final int capacity,
